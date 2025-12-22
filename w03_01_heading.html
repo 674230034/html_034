@@ -42,6 +42,25 @@
             text-align: left;
 
         }
+        .note::before{
+            content: "👌";
+        }
+        .back-link{
+            color: rgb(22, 22, 243);
+            text-decoration: none;
+
+            background-color: rgb(105, 209, 230);
+            display: inline-block;
+            text-align: center;
+
+            padding: 4px 24px;
+            border-radius: 100px;
+        }
+        .back-link:hover{
+            color: rgb(236, 60, 209);
+            background-color: aqua;
+            /*text-decoration: underline;*/
+        }
         pre{
             background-color: rgb(240, 238, 234);
             padding: 15px;
@@ -108,7 +127,7 @@ h5 {
         <p class="note">📍❗จำไว้ว่า <strong>ลำดับหัวข้อควรเป็น H1 → H2 → H3 ตามโครงสร้างเนื้อหา</strong> ไม่ควรใช้ H5 เพื่อให้ “ตัวเล็กลง” หรือใช้ H1 เพื่อให้ “ตัวใหญ่ขึ้น” → ต้องแก้ด้วย CSS เท่านั้น</p>
     </section>
 
-    <a href="index.html">&larr; Back to HTML Tutorial</a>
+    <a href="index.html"class="back-link">&larr; Back to HTML Tutorial</a>
 </div>
 
 </body>
