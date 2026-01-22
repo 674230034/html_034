@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <title>รายงานผลการเรียน</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+
+            background-color: rgb(238, 238, 238);
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 200px;
+        }
+
+        header {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            background-color: rgb(62, 158, 243);
+            padding: 15px;
+            box-shadow: 5px 5px 10px rgb(115, 122, 123);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            /* position: fixed; */
+            top: 0;
+            width: 100%;
+
+        }
+
+        .list-menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .list-menu li {
+            margin-top: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .list-menu li:hover {
+            transform: translateY(-5px);
+        }
+
+        .list-menu a {
+            text-decoration: none;
+            color: aliceblue;
+            font-weight: bold;
+            background: linear-gradient(135deg, rgb(144, 46, 224), rgb(237, 57, 177));
+            box-shadow: 0 4px 15px rgb(71, 68, 99);
+            padding: 8px 16px;
+            border-radius: 15px;
+        }
+
+        .list-menu a:hover {
+            background: linear-gradient(135deg, rgb(237, 218, 244), rgb(244, 23, 222));
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #2c7be5;
+            font-size: 20px;
+        }
+
+        .student-info {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .student-info img {
+            width: 120px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #2c7be5;
+        }
+
+        .info-text p {
+            margin: 6px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #a9d6f4;
+            padding: 10px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #3bbdfa;
+        }
+
+        .contact p {
+            margin: 8px 0;
+        }
+        img{
+            width: 200px;
+            transition: transform 0.3s ease;
+        }
+        img:hover{
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        footer {
+            color: #ddd;
+            text-align: center;
+            padding: 15px;
+            background-color: #060606;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Academic performance report</h1>
+        <ul class="list-menu">
+            <li><a href="#c1">ข้อมูลนักศึกษา</a></li>
+            <li><a href="#c2">ผลการเรียน</a></li>
+            <li><a href="#c3">ติดต่อ</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+
+        <!-- ข้อมูลนักศึกษา -->
+        <section class="card" id="c1">
+            <h2>ข้อมูลนักศึกษา</h2>
+            <div class="student-info">
+                <img src="img/รูปตัวเอง.jpg" alt="รูปนักศึกษา">
+                <div class="info-text">
+                    <p><strong>รหัสนักศึกษา:</strong> 674230034</p>
+                    <p><strong>ชื่อ - นามสกุล:</strong> นางสาวปภัสสร แย้มชื่น</p>
+                    <p><strong>หมู่เรียน:</strong> 67/44</p>
+                    <p><strong>สาขา:</strong> เทคโนโลยีสารสนเทศ</p>
+                    <p><strong>คณะ:</strong> วิทยาศาสตร์และเทคโนโลยี</p>
+                    <p><strong>อาจารย์ที่ปรึกษา:</strong> อาจารย์สุขสวัสดิ์ แซ่ลิ่ม</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ผลการเรียน -->
+        <section class="card" id="c2">
+            <h2>ผลการเรียน</h2>
+            <table>
+                <tr>
+                    <th>ภาคเรียน</th>
+                    <th>เกรดเฉลี่ย</th>
+                </tr>
+                <tr>
+                    <td>ปี 1 เทอม 1</td>
+                    <td>3.83</td>
+                </tr>
+                <tr>
+                    <td>ปี 1 เทอม 2</td>
+                    <td>3.66</td>
+                </tr>
+                <tr>
+                    <td>ปี 2 เทอม 1</td>
+                    <td>3.33</td>
+                </tr>
+            </table>
+
+            <p style="margin-top:10px;">
+                <strong>เกรดเฉลี่ยสะสม (GPA):</strong> 3.61
+            </p>
+        </section>
+
+        <!-- สถานที่ติดต่อ -->
+        <section class="card contact" id="c3">
+            <h2>ติดต่อ</h2>
+            <p><strong>ที่อยู่:</strong> เลขที่ 20/3 หมู่ที่ 4 ตำบลท่าไม้ อำเภอท่ามะกา จังหวัดกาญจนบุรี 71120</p>
+            <p><strong>อีเมล:</strong> 674230034@webmail.npru.ac.th</p>
+            <p><strong>โทรศัพท์:</strong> 098-935-1124</p>
+        </section>
+        <a href="#">TOP</a>
+
+    </div>
+
+    <footer>
+        © 2026 รายงานผลการเรียน
+    </footer>
+
+</body>
+
+</html>
