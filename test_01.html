@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <title>รายงานผลการเรียน</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+
+            background-color: rgb(71, 68, 219);
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 200px;
+        }
+
+        header {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            background-color: rgb(62, 158, 243);
+            padding: 15px;
+            box-shadow: 5px 5px 10px rgb(115, 122, 123);
+
+            /* font-size: 40px; */
+        }
+
+        hr {
+        border: 0;
+        border-top: 1px solid #f7af8e; /* สีเทาเข้ม ความหนา 2px */
+        margin: 20px 0; /* ระยะห่างบน-ล่าง */
+}
+
+        .list-menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        .list-menu li {
+            margin-top: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .list-menu li:hover {
+            transform: translateY(-5px);
+        }
+
+        .list-menu a {
+            text-decoration: none;
+            color: rgb(8, 8, 8);
+            font-weight: bold;
+            background-color: #3bbdfa;
+            /* background: linear-gradient(135deg, rgb(144, 46, 224), rgb(237, 57, 177)); */
+            box-shadow: 0 4px 15px rgb(71, 68, 99);
+            padding: 8px 16px;
+            border-radius: 15px;
+        }
+
+        .list-menu a:hover {
+            background: rgb(250, 112, 49);
+            color: aliceblue;
+        }
+
+        .c1, .c2, .c3{
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card1 {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card2 {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .student-info {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .student-info img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #2c7be5;
+            /* float: right;
+            margin-left: 15px;
+            justify-items: end; */
+        }
+
+        .info-text p {
+            /* margin: 6px 0; */
+        }
+        .name{
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .card-text{
+            flex: 1;
+            border: 1px solid #eee;
+            padding: 15px;
+            padding-right: 20px;
+            margin-top: 15px;
+            border-radius: 10px;
+            background-color: #ec7734;
+            color: aliceblue;
+
+            transition: transform 0.3s ease;
+        }
+        .card-text:hover{
+        transform: scale(1.1);
+        }
+        img{
+            width: 200px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .card-container {
+            /* display: flex;
+            flex-wrap: wrap; 
+            gap: 20px; 
+            padding: auto;
+            justify-content: center;  */
+            display: flex; /* เปิดใช้งาน Flexbox */
+            gap: 10px; 
+        }
+        .card3 {
+            background-color: #3bbdfa;;
+            width: 250px;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            font-weight: bold;
+
+            flex: 1; /* ทำให้ทุก item ยืดขยายขนาดเท่ากัน */
+            background-color: #3bbdfa;
+            padding: 20px;
+            text-align: center;
+        }
+        .card3:hover{
+            box-shadow: 0 4px 10px rgb(255, 251, 251);
+        }
+        strong{
+            color: #e92a2a;
+        }
+        .card4 {
+            background-color: rgb(231, 50, 50);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0px 2px 10px 0px rgb(233, 227, 140);
+            font-size: 40px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #a9d6f4;
+            padding: 10px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #3bbdfa;
+        }
+
+        .contact p {
+            margin: 8px 0;
+        }
+
+        footer {
+            color: #ddd;
+            text-align: center;
+            padding: 15px;
+            background-color: #060606;
+            margin-top: 20px;
+            font-size: 16px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        span{
+            background-color: #df9a6c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>📊 รายงานผลเกรด</h1>
+    </header>
+    <div class="container">
+    <section class="card1">
+        <ul class="list-menu">
+            <li><a href="#c1">👩‍🎓 ข้อมูลนักศึกษา</a></li>
+            <li><a href="#c2">📚 ผลการเรียน</a></li>
+            <li><a href="#c3">☎️ ติดต่อ</a></li>
+        </ul>
+    </section>
+
+        <!-- ข้อมูลนักศึกษา -->
+        <section class="card2" id="c1">
+            <div class="student-info">
+                <!-- <img src="img/รูปตัวเอง.jpg" alt="รูปนักศึกษา"> -->
+                <!-- <img src="https://scontent-bkk1-1.xx.fbcdn.net/v/t39.30808-1/594965753_2053986262023079_3237731239720455795_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=111&ccb=1-7&_nc_sid=1d2534&_nc_ohc=GIJJyqXkZiIQ7kNvwHoPU1m&_nc_oc=Adlk91zv-40pIC4SWisjzQsCMpKrylDJP1iV1_SBTzON4AVYCDtz-9KS98RByDZX4d0&_nc_zt=24&_nc_ht=scontent-bkk1-1.xx&_nc_gid=hSDCKJswvQXuwDtnwBb4jA&oh=00_AfsQX9j0q_QYJx0Y9XTo4q6hlinvE9QLRomKFKzDGFhcyQ&oe=69862296" alt=""> -->
+                <div class="info-text">
+                    <div class="card-text">
+                    <p class="name">👩‍🎓Miss. Paphatson Yaemchuen</p>
+                    <hr>
+                    <p><strong>🔢 รหัสนักศึกษา:</strong> 674230034</p>
+                    <p><strong>👧 ชื่อ - นามสกุล:</strong> นางสาวปภัสสร แย้มชื่น</p>
+                    <p><strong>📗 หมู่เรียน:</strong> 67/44</p>
+                    <p><strong>🧑‍🏫 อาจารย์ที่ปรึกษา:</strong> อาจารย์สุขสวัสดิ์ แซ่ลิ่ม</p>
+                    <p><strong>⛓️ Github:</strong> <span>https://github.com/674230034/html_034</span></p>
+                    </div>
+                </div>
+                <img src="https://scontent-bkk1-1.xx.fbcdn.net/v/t39.30808-1/594965753_2053986262023079_3237731239720455795_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=111&ccb=1-7&_nc_sid=1d2534&_nc_ohc=GIJJyqXkZiIQ7kNvwHoPU1m&_nc_oc=Adlk91zv-40pIC4SWisjzQsCMpKrylDJP1iV1_SBTzON4AVYCDtz-9KS98RByDZX4d0&_nc_zt=24&_nc_ht=scontent-bkk1-1.xx&_nc_gid=hSDCKJswvQXuwDtnwBb4jA&oh=00_AfsQX9j0q_QYJx0Y9XTo4q6hlinvE9QLRomKFKzDGFhcyQ&oe=69862296" alt="">
+            </div>
+        </section>
+
+        <!-- ผลการเรียน -->
+        <section class="card" id="c2">
+        </section>
+        <div class="card-container">
+            <div class="card3"><p>📕 ปีที่ 1 เทอม 1 : <strong>3.83</strong></p></div>
+            <div class="card3"><p>📕 ปีที่ 1 เทอม 2 : <strong>3.66</strong></p></div>
+            <div class="card3"><p>📕 ปีที่ 2 เทอม 1 : <strong>3.33</strong></p></div>
+        </div>
+
+        <!-- สถานที่ติดต่อ -->
+        <section class="card4" id="c3">
+            <p>🔥 เกรดเฉลี่ยสะสม: 3.61</p>
+        </section>
+    </div>
+    <footer>
+        <p>© 2026 Webmaster by Paphatson Yaemchuen. ID 674230034.</p>
+        <p>🏫 Nakhon Pathom Rajabhat University</p>
+    </footer>
+
+</body>
+</html>
