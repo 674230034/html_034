@@ -57,6 +57,7 @@
         .site-title {
             font-size: 1.5rem;
             font-weight: 700;
+            color: #1b1b1b;
         }
 
         .sub-title {
@@ -302,57 +303,63 @@
             gap: 8px;
         }
 
-        /* css for card2 table */
-        .comparison-table {
-            /* border: 2px solid green; */
-            /* border-collapse: collapse; */
+        /* ================css for card 2 = table =============== */
+.comparison-tb {
+    box-shadow: 0 4px 10px rgb(230, 180, 180);
+}
 
-            border-radius: 5px;
-            box-shadow: 0 2px 8px rgb(117, 114, 114);
+/* .comparison-tb th,
+.comparison-td td {
+    border: 1px solid #23065d;
+  
+}
+.comparison-tb th {
+    background-color: #764ba2;
+} */
 
-        }
+.comparison-tb th {
+    background: linear-gradient(45deg, rgb(179, 18, 107) 0%, rgb(238, 125, 223) 100%);
+    color: white;
+    padding: 12.5px;
+}
 
-        .comparison-table th {
-            /* border: 2px solid rgb(19, 194, 218); */
-            background: linear-gradient(45deg, rgb(138, 54, 174) 0%, rgb(244, 94, 204) 100%);
-            color: white;
-            padding: 15px;
-        }
+.comparison-tb tr:nth-child(even) td {
+    background-color: rgb(217, 145, 246);
+}
 
-        .comparison-table td {
-            /* border: 2px solid rgb(19, 194, 218); */
-            background-color: 2px solid white;
-            padding: 15px;
-        }
+.comparison-tb tr:hover td {
+    background-color: rgb(198, 222, 233);
+}
 
-        .comparison-table tr:nth-child(even) td {
-            background-color: rgb(221, 166, 218);
-        }
+.comparison-tb td {
+    background-color: rgb(237, 233, 235);
+    padding: 12.5px;
+}
 
-        .comparison-table tr:hover td {
-            background-color: rgb(188, 157, 227);
-        }
+.feature {
+    font-weight: 700;
+    color: #333;
+    font-size: 0.8rem;
+}
 
-        .feature {
-            font-weight: 600;
-            color: #333;
-            /* background-color: #ae5cbe; */
-        }
+.text-green {
+    font-weight: 500;
+    color: green;
+    font-size: 0.8rem;
+}
 
-        .text-grey {
-            font-weight: 500;
-            color: #777;
-        }
+.text-red {
+    font-weight: 500;
+    color: red;
+    font-size: 0.8rem;
+}
 
-        .text-green {
-            font-weight: 500;
-            color: #03852c;
-        }
+.text-gray {
+    font-weight: 500;
+    color: gray;
+    font-size: 0.8rem;
+}
 
-        .text-red {
-            font-weight: 500;
-            color: #a91414;
-        }
 
         /* set style for form : left side */
         .contact-form-main-card{
@@ -432,7 +439,6 @@
             border-color: #0f08eb;
             box-shadow: 0 0 0 3px rgba(85, 109, 249, 0.482);
             transform: translateY(-1px);
-
         }
 
         .form-button{
@@ -473,6 +479,38 @@
 
         .widget+.widget {
             margin-top: 10px;
+        }
+
+        /* set style for form : green */
+        .widget .contact-form-main-card2 {
+            background: linear-gradient(45deg,rgb(2, 98, 38) 0%,rgb(74, 240, 246) 100%);
+            border: 1px solid rgb(51, 196, 3);
+            box-shadow: #aefec8;
+            border-radius: 20px;
+
+            padding: 20px;
+        }
+
+        .widget .form-label{
+            color: #fcfcfc;
+        }
+
+        h3{
+            color: #ffffff;
+        }
+
+        /* set style for form : purple */
+        .widget .contact-form-main-card3 {
+            background: linear-gradient(45deg,rgb(173, 40, 173) 0%,rgb(119, 38, 218) 100%);
+            border: 1px solid rgba(80, 4, 147, 0.291);
+            box-shadow: #8b0480;
+            border-radius: 20px;
+
+            padding: 20px;
+        }
+
+        .widget .form-label{
+            color: #fcfcfc;
         }
     </style>
 
@@ -610,68 +648,72 @@
                                     <span>AUG</span>
                                 </div>
                             </div>
-                            <p class="post-description">
-                                ตารางด้านล่างแสดงความแตกต่างระหว่าง display: block และ display: inline-block
-                                เพื่อช่วยให้เข้าใจการเลือกใช้ display property ที่เหมาะสม
-                            </p>
 
-                            <table class="comparison-tb">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 25%;">คุณสมบัติ</th>
-                                        <th style="width: 37.5%;">display: block</th>
-                                        <th style="width: 37.5%;">display: inline-block</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="feature">การจัดเรียงองค์ประกอบ</td>
-                                        <td class="text-gray">📦 แต่ละตัวอยู่บรรทัดใหม่</td>
-                                        <td class="text-green">✅ เรียงต่อกันในบรรทัดเดียว</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="feature">ความกว้างเริ่มต้น</td>
-                                        <td class="text-red">❌ กินพื้นที่เต็มความกว้าง (100%)</td>
-                                        <td class="text-green">✅ ตามเนื้อหาภายใน (auto)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="feature">การกำหนด width และ height</td>
-                                        <td class="text-green">✅ กำหนดได้ทั้ง width และ height</td>
-                                        <td class="text-green">✅ กำหนดได้ทั้ง width และ height</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="feature">margin และ padding</td>
-                                        <td class="text-green">✅ ใช้ได้ครบทุกทิศทาง</td>
-                                        <td class="text-green">✅ ใช้ได้ครบทุกทิศทาง</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="feature">vertical-align</td>
-                                        <td class="text-red">❌ ไม่มีผลกับ block element</td>
-                                        <td class="text-green">✅ สามารถใช้ได้ (top, middle, bottom)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="feature">ช่องว่างระหว่างองค์ประกอบ</td>
-                                        <td class="text-red">🚫 ไม่มีปัญหาช่องว่าง</td>
-                                        <td class="text-red">❌ มีช่องว่างจาก whitespace ใน HTML</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="feature">การใช้งานที่เหมาะสม</td>
-                                        <td class="text-gray">📄 div, section, header, footer</td>
-                                        <td class="text-green">🎯 navigation menu, button groups</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p class="post-description">
-                                สรุป: display: block เหมาะสำหรับโครงสร้างหลักของหน้าเว็บ ส่วน display: inline-block
-                                เหมาะสำหรับการสร้างเมนู หรือองค์ประกอบที่ต้องเรียงต่อกัน
-                            </p>
+                             <p class="post-discription">
+                            ตารางด้านล่างแสดงความแตกต่างระหว่าง display: block และ display: inline-block
+                            เพื่อช่วยให้เข้าใจการเลือกใช้ display property ที่เหมาะสม
+                        </p>
 
-                            <div class="post-footer">
-                                <span>Tags: </span>
-                                <a href="">CSS</a><span>•</span>
-                                <a href="">display property</a>
-                            </div>
+                        <table class="comparison-tb">
+                            <thead>
+                                <tr>
+                                    <th style="width: 25%;"> คุณสมบัติ</th>
+                                    <th style="width: 37.5%">display: block</th>
+                                    <th style="width: 37.5%"> display: inline-block</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td class="feature"> การจัดเรียงองค์ประกอบ</td>
+                                    <td class="text-gray">📦 แต่ละตัวอยู่บรรทัดใหม่</td>
+                                    <td class="text-green">✅ เรียงต่อกันในบรรทัดเดียว</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature">ความกว้างเริ่มต้น </td>
+                                    <td class="text-red">❌ กินพื้นที่เต็มความกว้าง (100%)</td>
+                                    <td class="text-green">✅ ตามเนื้อหาภายใน (auto)</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature">การกำหนด width และ height</td>
+                                    <td class="text-green">✅ กำหนดได้ทั้ง width และ height</td>
+                                    <td class="text-green">✅ กำหนดได้ทั้ง width และ height</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature">margin และ padding</td>
+                                    <td class="text-green">✅ ใช้ได้ครบทุกทิศทาง</td>
+                                    <td class="text-green">✅ ใช้ได้ครบทุกทิศทาง</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature">vertical-align</td>
+                                    <td class="text-red">❌ ไม่มีผลกับ block element</td>
+                                    <td class="text-green">✅ สามารถใช้ได้ (top, middle, bottom)</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature">ช่องว่างระหว่างองค์ประกอบ</td>
+                                    <td class="text-green">🚫 ไม่มีปัญหาช่องว่าง</td>
+                                    <td class="text-red">❌ มีช่องว่างจาก whitespace ใน HTML</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature">การใช้งานที่เหมาะสม</td>
+                                    <td class="text-green">📄 div, section, header, footer</td>
+                                    <td class="text-green">🎯 navigation menu, button groups</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p class="post-discription">
+                            สรุป: display: block เหมาะสำหรับโครงสร้างหลักของหน้าเว็บ ส่วน display: inline-block
+                            เหมาะสำหรับการสร้างเมนู หรือองค์ประกอบที่ต้องเรียงต่อกัน
+                        </p>
+
+                        <div class="post-footer">
+                            <span>Tags:</span>
+                            <a href="">CSS</a><span>•</span>
+                            <a href="">display property</a>
                         </div>
+
+                    </div>
 
                         <!-- Card 3 = Form -->
                         <div class="card">
@@ -759,14 +801,75 @@
                         </div>
 
                         <!-- Widget 02 -->
-                        <div class="widget">
-                            📧 รับข่าวสารใหม่
-                            ชื่อของคุณ อีเมล สนใจเนื้อหาด้านไหน 🚀 สมัครเลย!
+                         <div class="widget">
+                            <!-- <h3 style="text-align: center;">📧 รับข่าวสารใหม่</h3> -->
+                            <div class="contact-form-main-card2">
+                                <form action="" mathod="">
+                                    <h3 style="text-align: center;">📧 รับข่าวสารใหม่</h3>
+                                            <div class="form-group">
+                                                <label for="fname" class="form-label">ชื่อของคุณ</label>
+                                                <input type="text" id="fname" name="fname" placeholder="ใส่ชื่อของคุณ" class="form-input">
+                                            </div>
+                                        
+                                        
+                                            <div class="form-group">
+                                                <label for="email" class="form-label">อีเมล</label>
+                                                <input type="text" id="email" name="email" placeholder="example@email.com" class="form-input">
+                                            </div>
+                                            
+                                        <div class="form-group">
+                                            <label for="topic" class="form-label">สนใจเนื้อหาด้านไหน</label>
+                                            <select name="topic" id="topic" class="form-select">
+                                                <option value="All">ทุกหัวข้อ</option>
+                                                <option value="Web development">Web development</option>
+                                                <option value="Mobile development">Mobile development</option>
+                                                <option value="UX/UI Design">UX/UI Design</option>
+                                                <option value="AI">AI</option>
+                                                <option value="Font-end">Font-end</option>
+                                                <option value="Back-end">Back-end</option>
+                                                <option value="Database">Database</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="form-button submit-button">🚀 สมัครเลย!</button>
+                                        </div>
+                                </form>
+                            </div>
                         </div>
 
                         <!-- Widget 03 -->
                         <div class="widget">
-                            💬 ติดต่อด่วน
+                            <div class="contact-form-main-card3">
+                                <form action="" mathod="">
+                                    <h3 style="text-align: center;">💬 ติดต่อด่วน</h3>
+                                            <div class="form-group">
+                                                <label for="fname" class="form-label">ชื่อของคุณ</label>
+                                                <input type="text" id="fname" name="fname" placeholder="ป้อนชื่อ" class="form-input">
+                                            </div>
+                                            
+                                        <div class="form-group">
+                                            <label for="topic" class="form-label">เลือกเรื่องที่ต้องการติดต่อ</label>
+                                            <select name="topic" id="topic" class="form-select">
+                                                <option value="Web development">เลือกเรื่องที่ต้องการติดต่อ</option>
+                                                <option value="Web development">สมัครเรียน</option>
+                                                <option value="Mobile development">ปัญหาการใช้งานเว็บ</option>
+                                                <option value="UX/UI Design">ขอคำปรึกษา</option>
+                                                <option value="AI">จ้างงาน</option>
+                                                <option value="AI">ข้อเสนอแนะ</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="detail" class="form-label">ข้อความสั้น ๆ</label>
+                                            <textarea name="detail" id="detail" class="form-textarea" placeholder="อธิบายสั้น ๆ..."></textarea>
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="form-button submit-button">📤 ส่งเลย</button>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="widget">
+                            
                             ชื่อ เรื่องที่ต้องการติดต่อ ข้อความสั้นๆ 📤 ส่งเลย
                         </div>
 
